@@ -1,0 +1,40 @@
+---
+title: "Homework 0"
+---
+
+### Instructions
+
+The instructions for this assignment are to write a Quarto document that allows me to define variables, a, b, and c, then solve the function f(x) = ax^2+bx+c=0 and graph the results.
+
+I should show the results for a=1, b=3, and c=2
+
+
+### Solution
+
+
+```{r}
+#| echo: true
+
+
+quadratic_function <- function(a=1, b=3, c=2){
+    x <- seq(-5, 5, length = 300)
+    solution1 <- (-b+(sqrt((b^2)-(4*a*c))))/(2*a)
+    solution2 <- (-b-(sqrt((b^2)-(4*a*c))))/(2*a)
+    print(paste ("a is", a))
+    print(paste("b is", b))
+    print(paste("c is", c))
+    print(paste("The solution to the equation f(x) = ax^2+bx+c=0, solving for x, is", solution1, "and", solution2))
+    print(paste("The following is the graph of this equation:"))
+   paste(plot(x, a*x^2 + b*x + c, type = "l") +abline(h = 0, lty = 2))
+}
+  
+quadratic_function(a=1,b=3,c=2)
+
+```
+
+### Explanation
+
+If people are interested in different values of a, b, and c in the function f(x) = ax^2+bx+c=0, the above code will allow people to change the values of a, b, and c in the function to arrive at the correct solutions for the quadratic equation and correct graphs pertaining to those values of a, b, and c.
+
+
+
